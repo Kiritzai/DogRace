@@ -104,7 +104,6 @@ namespace Dog_Race
 
                     break;
                 }
-                //dog[i].MyPictureBox.Refresh();
             }
         }
 
