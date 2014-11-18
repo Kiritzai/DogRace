@@ -61,8 +61,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(66, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -71,6 +72,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(12, 12);
             this.pictureBox5.Name = "pictureBox5";
@@ -81,8 +83,9 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(27, 60);
+            this.pictureBox2.Location = new System.Drawing.Point(18, 51);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(66, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -91,8 +94,9 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(27, 115);
+            this.pictureBox3.Location = new System.Drawing.Point(18, 106);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(66, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -101,8 +105,9 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(27, 167);
+            this.pictureBox4.Location = new System.Drawing.Point(18, 158);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(66, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -113,9 +118,9 @@
             // 
             this.labelGuy1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelGuy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGuy1.Location = new System.Drawing.Point(414, 246);
+            this.labelGuy1.Location = new System.Drawing.Point(356, 246);
             this.labelGuy1.Name = "labelGuy1";
-            this.labelGuy1.Size = new System.Drawing.Size(198, 23);
+            this.labelGuy1.Size = new System.Drawing.Size(256, 23);
             this.labelGuy1.TabIndex = 2;
             this.labelGuy1.Text = "labelGuy1";
             // 
@@ -123,9 +128,9 @@
             // 
             this.labelGuy2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelGuy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGuy2.Location = new System.Drawing.Point(414, 274);
+            this.labelGuy2.Location = new System.Drawing.Point(356, 274);
             this.labelGuy2.Name = "labelGuy2";
-            this.labelGuy2.Size = new System.Drawing.Size(198, 23);
+            this.labelGuy2.Size = new System.Drawing.Size(256, 23);
             this.labelGuy2.TabIndex = 2;
             this.labelGuy2.Text = "labelGuy2";
             // 
@@ -133,9 +138,9 @@
             // 
             this.labelGuy3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelGuy3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGuy3.Location = new System.Drawing.Point(414, 302);
+            this.labelGuy3.Location = new System.Drawing.Point(356, 302);
             this.labelGuy3.Name = "labelGuy3";
-            this.labelGuy3.Size = new System.Drawing.Size(198, 23);
+            this.labelGuy3.Size = new System.Drawing.Size(256, 23);
             this.labelGuy3.TabIndex = 2;
             this.labelGuy3.Text = "labelGuy3";
             // 
@@ -277,6 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 383);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonRace);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.label2);
@@ -294,10 +300,13 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Roemy\'s Dog Race!";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -19,13 +19,13 @@ namespace Dog_Race
 
         public void UpdateLabels()
         {
-            if (MyBet == null)
+            if (MyBet != null)
             {
-                MyLabel.Text = Name + " hasn't place a bet";
+                MyLabel.Text = MyBet.GetDescription();
             }
             else
             {
-                MyLabel.Text = Name + " bets " + MyBet.Amount;
+                MyLabel.Text = Name + " hasn't placed a bet";
             }
             MyRadioButton.Text = Name + " has " + Cash + " bucks";
         }
@@ -39,7 +39,6 @@ namespace Dog_Race
                 if (MyBet == null)
                 {
                     MyBet = new Bet() { Amount = Amount, Dog = Dog, Bettor = this };
-                    Cash -= Amount;
                     return true;
                 }
                 else
@@ -55,6 +54,12 @@ namespace Dog_Race
             }
         }
 
-        public void Collect(int Winner) { }
+        public void Collect(int Winner)
+        {
+            if (MyBet != null)
+            {
+                Cash += MyBet.PayOut(Winner); 
+            }
+        }
     }
 }

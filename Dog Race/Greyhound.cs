@@ -24,17 +24,21 @@ namespace Dog_Race
             MyPictureBox.Location = p;
             if (p.X >= RacetrackLenth)
             {
-                //MyPictureBox.Location = p;
                 return true;
             }
             else
-            {
-                
+            {   
                 return false;
             }
         }
 
-        public void TakeStartingPosistion()
+        public void SetStartingPosition()
+        {
+            Point start = MyPictureBox.Location;
+            StartingPosition = start.X;
+        }
+
+        public void TakeStartingPosition()
         {
             Point p = MyPictureBox.Location;
             p.X = this.StartingPosition;

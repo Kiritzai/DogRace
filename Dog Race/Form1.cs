@@ -35,11 +35,11 @@ namespace Dog_Race
 
             labelMinBet.Text = "Minimum bet is " + numericUpDown1.Minimum + " bucks";
 
-            for (int i = 0; i <= 2; i++)
-            {
-                guys[i].UpdateLabels();
-            }
+            for (int i = 0; i <= 2; i++) { guys[i].UpdateLabels(); }
+            for (int i = 0; i <= 3; i++) { dog[i].SetStartingPosition(); }
+
             labelName.Text = sName1;
+            labelMinBet.Text = "Minimum bet is " + numericUpDown1.Minimum;
         }
 
         private void radioGuy1_CheckedChanged(object sender, EventArgs e)
@@ -78,21 +78,45 @@ namespace Dog_Race
 
         private void buttonRace_Click(object sender, EventArgs e)
         {
-            timer1.Start();            
+            buttonRace.Enabled = false;
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            for (int i = 0; i <= 3; i++)
+            for (int i = 0; i < dog.Length; i++)
             {
                 if (dog[i].Run())
                 {
+                    i += 1;
                     timer1.Stop();
                     MessageBox.Show("Winner dog number #" + i, "test");
+                    for (int ii = 0; ii < guys.Length; ii++)
+                    {
+                        guys[ii].Collect(i);
+                        guys[ii].ClearBet();
+                        guys[ii].UpdateLabels();
+                    }
+                    for (int ii = 0; ii < dog.Length; ii++) { dog[ii].TakeStartingPosition(); }
+                    buttonRace.Enabled = true;
+
+
+
                     break;
                 }
                 //dog[i].MyPictureBox.Refresh();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            /*
+             * For Transparency on the dog image
+             */
+            pictureBox1.Parent = pictureBox5;
+            pictureBox2.Parent = pictureBox5;
+            pictureBox3.Parent = pictureBox5;
+            pictureBox4.Parent = pictureBox5;
         }
     }
 }

@@ -14,19 +14,19 @@ namespace Dog_Race
 
         public string GetDescription()
         {
-            if (Amount <= 0)
-            {
-                return Bettor.Name + " has not placed a bet";
-            }
-            else
-            {
-                return Bettor.Name + " bets " + Amount + " bucks on dog #" + Dog;
-            }
+            return Bettor.Name + " bets " + Amount + " bucks on Dog #" + Dog;
         }
 
         public int PayOut(int Winner)
         {
-            return 0;
+            if (Dog == Winner)
+            {
+                return Amount;
+            }
+            else
+            {
+                return -1 * Amount;
+            }
         }
     }
 }
